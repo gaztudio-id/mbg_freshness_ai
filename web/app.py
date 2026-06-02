@@ -90,4 +90,5 @@ def predict_frame():
 
 if __name__ == "__main__":
     print("Memulai server web MBG AI...")
-    app.run(debug=True, port=8080)
+    port = int(os.environ.get("PORT", 8080))
+    app.run(debug=False, host="0.0.0.0", port=port)
