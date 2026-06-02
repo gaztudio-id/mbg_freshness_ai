@@ -127,4 +127,26 @@ mbg_freshness_ai/
 └── README.md                      # Professional project documentation
 ```
 
+---
 
+## Developer Guidelines
+
+To maintain code quality, styling consistency, and deployment readiness, all developers contributing to this project must adhere to the following guidelines:
+
+### 1. Frontend & Design System
+* **Design Tokens:** Always utilize the CSS variables defined in `:root` inside [web/templates/index.html](file:///c:/Punya%20GW/Kuliah/ProjectKel11/web/templates/index.html) for styling (e.g., primary indigo `#120A59`, neon lime `#D8F500`, and secondary gray scale). Do not hardcode hex colors.
+* **Responsive Layout:**
+  * Desktop layouts use a global scale factor of `zoom: 0.8` on `body` to fit standard presentation viewports.
+  * Mobile viewports (width $\le$ 768px) must reset to `zoom: 1` and apply suitable compact styles.
+* **Scroll-based Navbar:** The floating capsule navbar's transition states are controlled dynamically via window scroll listeners in Javascript. Do not bind layout morphing triggers to hover actions.
+
+### 2. Backend & ML Model
+* **Model File:** The main trained weights file must remain named `mbg_freshness_model.h5` and located in the project root.
+* **Production Requirements:**
+  * Always add new dependencies to `requirements.txt`.
+  * For deployment environment compatibility, use `tensorflow-cpu` (to prevent oversized build images) and `opencv-python-headless` (to prevent missing X11/GL library crashes on Linux servers).
+* **Piecewise Suitability Logic:** The food suitability percentage index is calculated using a piecewise linear progression in the backend (`predict_frame` endpoint in `web/app.py`). Any adjustments to thresholds must be coordinated with the ML training team.
+
+### 3. Git & Files Workspace
+* **Git Filter Rules:** Never stage or commit massive datasets (`dataset_final/`, `staging/`, or raw archives `.zip`/`.rar`). They are already configured in `.gitignore`.
+* **Commit Messages:** Follow clean commit prefixes (e.g., `feat:` for new features, `fix:` for bug fixes, `docs:` for documentation updates, `chore:` for dependency/config changes).
