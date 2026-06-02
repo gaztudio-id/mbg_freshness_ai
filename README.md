@@ -10,6 +10,34 @@ Developed by **Kelompok 11 — Politeknik Caltex Riau**: Ghaswul Fikri Fadhillah
 
 ---
 
+## System Architecture & Workflow
+
+Here is how the components interact in the MBG Freshness AI application:
+
+```mermaid
+graph TD
+    A[Client Browser] -->|1. Stream Camera / Upload Image| B(Webcam/Upload Module)
+    B -->|2. Capture Frame & Convert to Base64| C[JS Controller]
+    C -->|3. POST Request with Base64 Payload| D(Flask Backend Server)
+    D -->|4. Decode Base64 to cv2 Image Matrix| E[Image Processor]
+    E -->|5. Resize 224x224, Convert RGB, Rescale 1/255.0| F[Processed NumPy Array]
+    F -->|6. Feed Forward Inference| G[MobileNetV2 Classifier Model]
+    G -->|7. Return Raw Binary Probability 0.0 to 1.0| H[Piecewise Suitability Scorer]
+    H -->|8. Compute Suitability % & Recommendation| I[Flask JSON Response]
+    I -->|9. AJAX Success Handler| C
+    C -->|10. Render Bounding Boxes & Dynamic Graphs| A
+```
+
+### System Workflow Description
+1. **Frontend Capture:** The browser captures real-time video frames from the webcam or processes uploaded files, rendering the output on a `<canvas>`.
+2. **Data Transmission:** Every frame is serialized into a Base64 string and sent asynchronously via the Fetch API to the `/predict_frame` backend endpoint.
+3. **Backend Processing:** Flask receives the payload, decodes it into a standard OpenCV image matrix (`numpy` array), resizes it to $224 \times 224 \times 3$, and scales the pixel values to $[0.0, 1.0]$.
+4. **AI Inference:** The custom-headed `MobileNetV2` model predicts the probability of decay (`tidak_segar`).
+5. **Suitability Scoring:** The prediction probability is mapped to a percentage suitability index using a custom piecewise linear algorithm.
+6. **UI Rendering:** The result is returned as JSON to the client, which dynamically updates the bounding box color, suitability bar, status indicators, and logs without reloading the page.
+
+---
+
 ## Key Features
 
 ### 1. Real-time Video Inference
