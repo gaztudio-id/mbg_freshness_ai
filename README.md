@@ -127,15 +127,4 @@ mbg_freshness_ai/
 └── README.md                      # Professional project documentation
 ```
 
----
 
-## Contributors
-
-### Kelompok 11 — Politeknik Caltex Riau
-* **Daffa Hadziq** (2255301035)
-* **Dafi Hibrizi** (2355301037)
-* **Ghaswul Fikri Fadhillah** (2355301076)
-
-### Dosen Pengampu
-* **Dr. Juni Nurma Sari, S.Kom., M.MT.**
-* **Ahmad Ali Munawar, S.Tr. Kom**
