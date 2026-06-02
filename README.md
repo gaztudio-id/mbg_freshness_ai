@@ -6,7 +6,7 @@
 
 An editorial, real-time AI-powered freshness classification web application tailored for the **Makan Bergizi Gratis (MBG)** national program. Built using **MobileNetV2** transfer learning and served via a lightweight, high-performance Flask backend with a premium, responsive web interface.
 
-Developed by **Kelompok 11 — Politeknik Caltex Riau**.
+Developed by **Kelompok 11 — Politeknik Caltex Riau**: Ghaswul Fikri Fadhillah (<ghaswul23ti@mahasiswa.pcr.ac.id>), Daffa Hadziq (<daffa23ti@mahasiswa.pcr.ac.id>), and Dafi Hibrizi (<dafi23ti@mahasiswa.pcr.ac.id>).
 
 ---
 
@@ -127,11 +127,4 @@ mbg_freshness_ai/
 └── README.md                      # Professional project documentation
 ```
 
----
 
-## Contributors
-
-### Kelompok 11 — Politeknik Caltex Riau
-* **Ghaswul Fikri Fadhillah** (<ghaswul23ti@mahasiswa.pcr.ac.id>)
-* **Daffa Hadziq** (<daffa23ti@mahasiswa.pcr.ac.id>)
-* **Dafi Hibrizi** (<dafi23ti@mahasiswa.pcr.ac.id>)
