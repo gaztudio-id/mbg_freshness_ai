@@ -1,9 +1,8 @@
-# MBG Freshness AI 🍎🥦
+# MBG Freshness AI
 
 [![Python Version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue.svg)](https://www.python.org/)
 [![TensorFlow Version](https://img.shields.io/badge/tensorflow-2.11+-orange.svg)](https://www.tensorflow.org/)
 [![Flask Version](https://img.shields.io/badge/flask-3.0+-green.svg)](https://flask.palletsprojects.com/)
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
 
 An editorial, real-time AI-powered freshness classification web application tailored for the **Makan Bergizi Gratis (MBG)** national program. Built using **MobileNetV2** transfer learning and served via a lightweight, high-performance Flask backend with a premium, responsive web interface.
 
@@ -11,7 +10,7 @@ Developed by **Kelompok 11 — Politeknik Caltex Riau**.
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
 ### 1. Real-time Video Inference
 * **Webcam Streaming:** Scans raw food ingredients via the device webcam.
@@ -38,7 +37,7 @@ Developed by **Kelompok 11 — Politeknik Caltex Riau**.
 
 ---
 
-## 📊 Model & Training Overview
+## Model & Training Overview
 
 The underlying model is a customized deep neural network fine-tuned using transfer learning:
 
@@ -50,14 +49,14 @@ The underlying model is a customized deep neural network fine-tuned using transf
 * **Dataset Size:** **64,627 images** (51,712 for training, 12,915 for validation) across two classes: `segar` (fresh) and `tidak_segar` (stale).
 * **Early Stopping:** Triggered at **Epoch 28** based on validation loss patience.
 
-### 📈 Metrics Summary
+### Metrics Summary
 * **Validation Accuracy (`val_accuracy`):** `98.67%`
 * **Validation Loss (`val_loss`):** `0.0372`
 * **Average Training Time:** ~29 minutes (~1s/step, 1616 steps per epoch).
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Backend:** Python 3.10+, Flask, TensorFlow 2.11+, OpenCV, NumPy.
 * **Frontend:** HTML5 (Semantic Structure), Vanilla CSS3 (Synthesis Capital design tokens, HSL typography, CSS transitions), Javascript (ES6+, Fetch API, Canvas rendering).
@@ -65,7 +64,7 @@ The underlying model is a customized deep neural network fine-tuned using transf
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -109,7 +108,7 @@ Ensure you have Python 3.8+ installed on your local machine.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 mbg_freshness_ai/
@@ -130,14 +129,13 @@ mbg_freshness_ai/
 
 ---
 
-## 👥 Contributors
+## Contributors
 
-* **Kelompok 11 — Politeknik Caltex Riau**
-  * Ghaswul Fikri Fadhillah
-  * *and team members*
+### Kelompok 11 — Politeknik Caltex Riau
+* **Daffa Hadziq** (2255301035)
+* **Dafi Hibrizi** (2355301037)
+* **Ghaswul Fikri Fadhillah** (2355301076)
 
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### Dosen Pengampu
+* **Dr. Juni Nurma Sari, S.Kom., M.MT.**
+* **Ahmad Ali Munawar, S.Tr. Kom**
